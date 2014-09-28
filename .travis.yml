@@ -4,4 +4,5 @@ before_install:
   sudo pip install git+git://github.com/codecov/codecov-python.git@java#egg=codecov
 
 after_success:
-  codecov
+  - ls -la
+  - codecov
