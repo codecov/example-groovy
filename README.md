@@ -1,4 +1,4 @@
-Grooby -> Codecov.io
+Groovy -> Codecov.io
 =======
 | [https://codecov.io/][1] | [@codecov][2] | [hello@codecov.io][3] |
 | ------------------------ | ------------- | --------------------- |
