@@ -1,15 +1,17 @@
-Codecov Groovy Example
-======================
+# [Codecov][1] Groovy Example
+## Guide
+### Travis Setup
 
-| [https://codecov.io][1] | [@codecov][2] | [hello@codecov.io][3] |
-| ----------------------- | ------------- | --------------------- |
+Add to your `.travis.yml` file.
+```yml
+language: java
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+```
 
-This repository serves as an **example** on how to use [Codecov Global][4] for Groovy.
-
-## Usage
-
-
-### Add Jacoco plugin
+> All other CI you can simply run `bash <(curl -s https://codecov.io/bash)`.
+### Produce Coverage Reports
+#### Add Jacoco plugin
 ```xml
 <plugin>
   <groupId>org.jacoco</groupId>
@@ -31,35 +33,22 @@ This repository serves as an **example** on how to use [Codecov Global][4] for G
   </executions>
 </plugin>
 ```
-
-
-# Travis CI
-
+## Caveats
+### Private Repos
 Add to your `.travis.yml` file.
 ```yml
-language: groovy
-
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -t uuid-repo-token
 ```
+## Support
 
-> All other CI you can simply run `bash <(curl -s https://codecov.io/bash)`.
+### Contact
+- Intercom (in-app messanger)
+- Email: [support@codecov.io](mailto:support@codecov.io)
+- Slack: [slack.codecov.io](https://slack.codecov.io)
+- [gh/codecov/support](https://github.com/codecov/support)
 
-## Private Repos
-
-Add to your `.travis.yml` file.
-```yml
-env:
-  global:
-    - CODECOV_TOKEN=:uuid-repo-token
-
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
-```
-
-View source and learn more about [Codecov Global Uploader][4]
+1. More documentation at https://docs.codecov.io
+2. Configure codecov through the `codecov.yml`  https://docs.codecov.io/docs/codecov-yaml
 
 [1]: https://codecov.io/
-[2]: https://twitter.com/codecov
-[3]: mailto:hello@codecov.io
-[4]: https://github.com/codecov/codecov-bash
